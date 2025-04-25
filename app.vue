@@ -1,5 +1,3 @@
 <template>
-   <div>
-      <h1>Hello world</h1>
-   </div>
+   <h1 class="text-[20rem]">hello world</h1>
 </template>
