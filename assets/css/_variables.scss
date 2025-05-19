@@ -1,1 +1,15 @@
-$primary: #000000;
+:root {
+   --color-bg: rgb(255, 255, 255);
+   --color-primary: rgb(0, 0, 0);
+   --color-accent: rgb(59, 130, 246);
+}
+
+[data-theme="light"] {
+   --color-bg: rgb(255, 255, 255);
+   --color-primary: rgb(0, 0, 0);
+}
+
+[data-theme="dark"] {
+   --color-bg: rgb(0, 0, 0);
+   --color-primary: rgb(255, 255, 255);
+}
