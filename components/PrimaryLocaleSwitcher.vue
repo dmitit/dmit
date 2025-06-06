@@ -18,7 +18,7 @@ const availableLocales = computed(() => {
          @mouseleave="isOpen = false"
       >
          <button
-            class="ring-primary-900 flex h-full w-full bg-primary text-xs font-medium text-background ring-1"
+            class="flex h-full w-full bg-primary text-xs font-medium text-background ring-1 ring-primary-900"
          >
             <span class="pl-[1px]">
                {{ locale }}
@@ -35,7 +35,7 @@ const availableLocales = computed(() => {
          >
             <div
                v-if="isOpen"
-               class="ring-primary-900 absolute left-0 z-10 w-full origin-top ring-1"
+               class="absolute left-0 z-10 w-full origin-top ring-1 ring-primary-900"
             >
                <ul>
                   <li
