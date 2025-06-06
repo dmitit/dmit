@@ -1,7 +1,7 @@
 <script setup>
 const { locale, locales } = useI18n();
 
-const isOpen = ref(true);
+const isOpen = ref(false);
 
 const switchLocalePath = useSwitchLocalePath();
 
