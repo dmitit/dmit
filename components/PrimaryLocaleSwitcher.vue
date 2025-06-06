@@ -11,14 +11,14 @@ const availableLocales = computed(() => {
 </script>
 
 <template>
-   <div class="h-[20px] w-[20px]">
+   <div class="h-5 w-5">
       <div
          class="relative h-full w-full"
          @mouseenter="isOpen = true"
          @mouseleave="isOpen = false"
       >
          <button
-            class="flex h-full w-full bg-primary text-xs font-medium text-background ring-1 ring-primary-900"
+            class="flex h-full w-full border border-primary bg-background text-xs font-medium text-primary"
          >
             <span class="pl-[1px]">
                {{ locale }}
@@ -26,7 +26,7 @@ const availableLocales = computed(() => {
          </button>
          <Transition
             name="dropdown"
-            enter-active-class="transition-all duration-100"
+            enter-active-class="transition-all duration-200"
             leave-active-class="transition-all duration-300"
             enter-from-class="opacity-0 scale-y-0"
             enter-to-class="opacity-100 scale-y-100"
@@ -35,13 +35,13 @@ const availableLocales = computed(() => {
          >
             <div
                v-if="isOpen"
-               class="absolute left-0 z-10 w-full origin-top ring-1 ring-primary-900"
+               class="absolute left-0 z-10 w-full origin-top border border-primary-900"
             >
                <ul>
                   <li
                      v-for="loc in availableLocales"
                      :key="loc.code"
-                     class="h-[20px] w-full cursor-pointer bg-background text-xs font-medium text-primary hover:shadow-[inset_0_0_2px_var(--color-primary-700)]"
+                     class="h-5 w-full cursor-pointer bg-primary text-xs font-medium text-background"
                      @click="
                         () => {
                            switchLocalePath(loc.code);

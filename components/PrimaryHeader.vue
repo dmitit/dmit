@@ -48,7 +48,7 @@
             <div class="flex flex-[0.5] items-center justify-end">
                <div class="flex items-center gap-6">
                   <PrimaryLocaleSwitcher />
-                  <div>theme</div>
+                  <PrimaryThemeSwitcher />
                </div>
             </div>
          </div>
