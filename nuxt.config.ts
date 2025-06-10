@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-   modules: ["@nuxt/eslint", "@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+   modules: [
+     "@nuxt/eslint",
+     "@nuxtjs/tailwindcss",
+     "@nuxtjs/i18n",
+     "@nuxt/icon",
+     "@nuxt/image",
+   ],
    devtools: {
       enabled: true,
    },
@@ -15,7 +21,7 @@ export default defineNuxtConfig({
       },
       langDir: "./",
       restructureDir: "./",
-      strategy: "prefix",
+      strategy: "prefix_and_default",
    },
    css: ["@/assets/css/main.scss"],
    compatibilityDate: "2024-11-01",

@@ -1,28 +1,29 @@
 <script setup>
+import { useTheme } from "./composables/useTheme";
+
 // The only solution I found to set the theme before the page loads
 useHead({
    script: [
       {
          children: `
         (function() {
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+          const themeKey = 'theme';
+          const storedTheme = localStorage.getItem(themeKey);
+          let themeToSet;
+          if (storedTheme) {
+            themeToSet = storedTheme;
+          } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            themeToSet = prefersDark ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', themeToSet);
         })();
       `,
       },
    ],
 });
 
-if (import.meta.client) {
-   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-   const updateTheme = () => {
-      console.log("Updating theme...");
-      setTheme(mediaQuery.matches ? "dark" : "light");
-   };
-
-   mediaQuery.addEventListener("change", updateTheme);
-}
+useTheme();
 </script>
 
 <template>
