@@ -1,11 +1,11 @@
 <template>
    <main>
-      <section class="mb-16 py-16 text-primary">
+      <section class="py-16 text-primary">
          <PrimaryContainer>
             <AboutUsSection />
          </PrimaryContainer>
       </section>
-      <section>
+      <section class="bg-background-100 md:py-16">
          <PrimaryContainer>
             <ContactUsSection />
          </PrimaryContainer>
